@@ -42,9 +42,9 @@ header {
     background: transparent;
     width: 30%;
     position: relative;
+    transition: all 0.2s ease-in-out;
 
     label {
-      border: 2px solid #fff;
       display: flex;
       align-items: center;
 
@@ -54,8 +54,9 @@ header {
       justify-content: space-between;
       align-items: center;
       border-radius: 6px;
-      border: 2px solid $gray-300;
+      border: 2px solid #cccccc88;
       background: transparent;
+      transition: all 0.2s ease-in-out;
 
       input {
         width: 100%;
@@ -67,14 +68,18 @@ header {
       }
 
       input::placeholder {
-        color: #fff;
+        color: #ccc;
+        // opacity: 0.5;
+        transition: all 0.2s ease-in-out;
       }
 
       svg {
         margin-left: 5px;
         background: none;
-        color: white;
+        color: $gray-500;
         background: transparent;
+        opacity: 0.5;
+        transition: all 0.2s ease-in-out;
       }
     }
 
@@ -125,6 +130,19 @@ header {
 
       &::-webkit-scrollbar-thumb:hover {
         background-color: #a80f36;
+      }
+    }
+  }
+
+  .search.active {
+    label {
+      border: 2px solid #fff;
+      border: 2px solid $gray-300;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+
+      svg {
+        color: white;
+        opacity: 1;
       }
     }
   }

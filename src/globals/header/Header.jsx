@@ -14,6 +14,8 @@ const Header = () => {
   const [search, setSearch] = useState('');
   const [activeScroll, setActiveScroll] = useState(false);
 
+  const [active, setActive] = useState(false);
+
   const [searchResult, setSearchResult] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
 
@@ -77,13 +79,15 @@ const Header = () => {
         <span>MovieBox</span>
       </Link>
 
-      <div className="search">
+      <div className={`search ${active ? 'active' : ''}`}>
         <label aria-label="search">
           <input
             type="text"
             value={search}
             placeholder="What do you want to watch?"
             onChange={(event) => setSearch(event.target.value)}
+            onFocus={() => setActive(true)}
+            onBlur={() => setActive(false)}
           />
 
           <SearchIcon />
