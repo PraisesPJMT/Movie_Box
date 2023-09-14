@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { API_STATUS } from '../../utilities/enums';
 import { BurgerIcon, SearchIcon } from '../../assets/icons/Icons';
+import { API_STATUS, SEARCH_DEBOUNCE } from '../../utilities/enums';
 
-import debounce from 'lodash.debounce';
 import Logo from '../../assets/tv.svg';
 import useMovieStore from '../../store/store';
 import Loader from '../../components/loader/Loader';
@@ -22,15 +21,26 @@ const Header = () => {
   const searchedMovies = useMovieStore((state) => state.search.data);
   const status = useMovieStore((state) => state.search.status);
 
+  let timeoutId;
+
+  const debounce = (func, delay) => {
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+
   const debouncedSearch = debounce((query) => {
     searchMovies(query);
-  }, 300);
+  }, SEARCH_DEBOUNCE);
 
   useEffect(() => {
     debouncedSearch(search);
 
     return () => {
-      debouncedSearch.cancel();
+      clearTimeout(timeoutId);
     };
   }, [search]);
 
