@@ -5,6 +5,7 @@
   - [🛠 Built With ](#-built-with-)
     - [⚙️ Tech Stack ](#️-tech-stack-)
     - [💡 Key Features ](#-key-features-)
+  - [💻 Preview ](#-preview-)
   - [🚀 Live Link ](#-live-link-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -56,11 +57,15 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 💻 Preview <a name="preview"></a>
+
+![Preview](./assets/../src/assets/preview.jpeg)
+
 ## 🚀 Live Link <a name="live-endpoint"></a>
 
-> Coming soon ...
+[Live Link](https://praisespjmt.github.io/praises_tula_profile/)
 
-<!-- - [Live Demo Link]() -->
+![Netlify](https://img.shields.io/badge/github-%23000000.svg?style=for-the-badge&logo=github&logoColor=#00C7B7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
