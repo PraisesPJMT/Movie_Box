@@ -63,7 +63,7 @@
 
 ## 🚀 Live Link <a name="live-endpoint"></a>
 
-[Live Link](https://praisespjmt.github.io/praises_tula_profile/)
+[Movie Box](https://imdb-movie-box.netlify.app/)
 
 ![Netlify](https://img.shields.io/badge/github-%23000000.svg?style=for-the-badge&logo=github&logoColor=#00C7B7)
 
