@@ -7,8 +7,6 @@ import axios from 'axios';
 
 import { API_STATUS } from '../utilities/enums';
 
-// https://api.themoviedb.org/3/movie/693134?language=en-US
-
 /**
  * Base URL for the Movie Database API.
  * @constant {string}
@@ -42,6 +40,38 @@ const api = axios.create({
  * @property {function} searchMovie - Function to search for movies based on a query.
  */
 const API = {
+  /**
+   * Function to get a movie.
+   * @async
+   * @function getMovie
+   * @returns {Promise<object>} An object with status and data properties.
+   * @throws {Error} If an error occurs during the API request.
+   */
+  getMovie: async (movieId) => {
+    try {
+      const response = await api.get(`/movie/${movieId}?language=en-US`);
+
+      const { status, data } = response;
+
+      if (status === 200) {
+        return {
+          status: API_STATUS.SUCCEEDED, // 'IDLE' || 'SUCCEEDED' || 'FAILED' || 'LOADING'
+          data,
+        };
+      } else {
+        return {
+          status: API_STATUS.ERROR, // 'IDLE' || 'SUCCEEDED' || 'FAILED' || 'LOADING'
+          data: null,
+        };
+      }
+    } catch (error) {
+      return {
+        status: API_STATUS.ERROR, // 'IDLE' || 'SUCCEEDED' || 'FAILED' || 'LOADING'
+        data: null,
+      };
+    }
+  },
+
   /**
    * Function to get a list of top-rated movies.
    * @async
@@ -96,6 +126,40 @@ const API = {
         return {
           status: API_STATUS.SUCCEEDED, // 'IDLE' || 'SUCCEEDED' || 'FAILED' || 'LOADING'
           data: results,
+        };
+      } else {
+        return {
+          status: API_STATUS.ERROR, // 'IDLE' || 'SUCCEEDED' || 'FAILED' || 'LOADING'
+          data: null,
+        };
+      }
+    } catch (error) {
+      return {
+        status: API_STATUS.ERROR, // 'IDLE' || 'SUCCEEDED' || 'FAILED' || 'LOADING'
+        data: null,
+      };
+    }
+  },
+
+  /**
+   * Function to get a movie youtube trailer video key.
+   * @async
+   * @function getVideoKey
+   * @returns {Promise<object>} An object with status and data properties.
+   * @throws {Error} If an error occurs during the API request.
+   */
+  getVideoKey: async (movieId) => {
+    try {
+      const response = await api.get(`/movie/${movieId}/videos`);
+
+      const { status } = response;
+      const { results } = response.data;
+      const { key } = results[0];
+
+      if (status === 200) {
+        return {
+          status: API_STATUS.SUCCEEDED, // 'IDLE' || 'SUCCEEDED' || 'FAILED' || 'LOADING'
+          data: key,
         };
       } else {
         return {
