@@ -1,19 +1,18 @@
 import { Link, NavLink } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 
 import Logo from '../../assets/tv.svg';
 import HomeIcon from '../../assets/Home.svg';
-import MoviesIcon from '../../assets/Movie.svg';
 import SeriesIcon from '../../assets/TV.svg';
-import UpcomingIcon from '../../assets/Calendar.svg';
+import MoviesIcon from '../../assets/Movie.svg';
 import LogoutIcon from '../../assets/Logout.svg';
+import UpcomingIcon from '../../assets/Calendar.svg';
 
 import './Sidebar.scss';
 
 const Sidebar = () => {
   return (
     <aside className="movie-sidebar">
-      <Link to="#" aria-label="home">
+      <Link to="/" aria-label="home">
         <img src={Logo} alt="logo" />
         <span>MovieBox</span>
       </Link>
@@ -48,7 +47,8 @@ const Sidebar = () => {
       <div>
         <h4>Play movie quizes and earn free tickets</h4>
         <p>50k people are playing now</p>
-        <button type="button">Start playing</button>
+
+        <Link to="#">Start playing</Link>
       </div>
 
       <button type="button" aria-label="Log out">

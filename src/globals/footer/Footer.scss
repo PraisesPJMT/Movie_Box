@@ -41,6 +41,10 @@ footer {
       font-size: 18px;
       font-weight: 700;
       line-height: normal;
+
+      &:hover {
+        color: $red;
+      }
     }
   }
 

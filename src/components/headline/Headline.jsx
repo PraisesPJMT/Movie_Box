@@ -36,10 +36,10 @@ const Headline = () => {
           the target of hit men and women everywhere.
         </p>
 
-        <button type="button">
+        <Link to="#">
           <PlayIcon />
           Watch trailer
-        </button>
+        </Link>
       </div>
 
       <div className="headline-nav">

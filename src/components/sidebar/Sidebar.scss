@@ -20,6 +20,7 @@ aside.movie-sidebar {
   span,
   button {
     background: transparent;
+    font-family: $Poppins;
   }
 
   a {
@@ -33,7 +34,7 @@ aside.movie-sidebar {
     padding: 15px;
     font-weight: 600;
     color: #333;
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 20px;
 
     img {
@@ -61,7 +62,7 @@ aside.movie-sidebar {
         gap: 20px;
         padding: 10px 20px;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 18px;
         color: $harsh;
 
         img {
@@ -98,15 +99,15 @@ aside.movie-sidebar {
       color: $harsh;
     }
 
-    button {
+    a {
       border-radius: 30px;
       background: rgba(190, 18, 60, 0.2);
       color: $red;
-      //   font-family: Poppins;
       font-size: 12px;
       font-weight: 500;
       border: none;
       text-align: center;
+      justify-content: center;
       margin-top: 10px;
       width: 100%;
       padding: 5px;
@@ -119,7 +120,7 @@ aside.movie-sidebar {
     gap: 20px;
     padding: 10px 20px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     color: $harsh;
     margin-top: auto;
     margin-bottom: 45px;

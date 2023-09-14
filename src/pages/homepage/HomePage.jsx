@@ -11,6 +11,7 @@ import Headline from '../../components/headline/Headline';
 import MovieCard from '../../components/movie-card/MovieCard';
 
 import './HomePage.scss';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -42,15 +43,16 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <main className='home-main'>
+      <main className="home-main">
         <Headline />
         <section className="movies">
           <div className="sec-head">
             <h2>Featured Movies</h2>
-            <button type="button">
+
+            <Link to="#">
               See more
               <RedChevronRIghtIcon />
-            </button>
+            </Link>
           </div>
 
           {isLoading ? (
